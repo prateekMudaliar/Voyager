@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import HeroSection from './components/HeroSection';
+import Destinations from './components/Destinations';
+import ContactUs from './components/ContactUs';
+import Registration from './components/Registration';
+import { motion } from 'framer-motion';
+import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from "@material-tailwind/react";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-mycover  bg-cover bg-fixed bg-no-repeat">
+   
+  
+      <ThemeProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <HeroSection/>
+          <Destinations/>
+          
+          <Registration/>
+          <ContactUs/>
+        </BrowserRouter>
+      </ThemeProvider>
+     
+    
     </div>
   );
 }
